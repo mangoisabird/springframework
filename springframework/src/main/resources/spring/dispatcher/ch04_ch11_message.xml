@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- id는 관리객체 bean의 key값 -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<!-- basename은 뭐라고?! -->
+		<!-- 여러가지의 basename들이 있을 수 있기 때문에 여러가지 등록 가능하다 -->
+		<property name="basenames">
+			<list> <!-- 이 setter은 list를 매개변수로 받는구나 -->
+				<value>message/ch04_error</value>
+				<value>message/ch11_internationalization</value>
+			</list>
+		</property>		
+		<property name="defaultEncoding" value="UTF-8"/>		
+	</bean>
+	
+	
+</beans>
